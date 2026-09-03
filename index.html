@@ -359,7 +359,7 @@
     $('pct').textContent = r.pct.toFixed(1).replace('.',',') + '% do orçamento total da obra';
     $('faixa').textContent = 'faixa estimada: ' + brl(r.mes*0.65) + '  a  ' + brl(r.mes*1.35) + ' / mês';
     $('total').textContent = brl(r.totalObra);
-    $('totaltxt').textContent = 'é o acumulado nos ' + r.prazo + ' meses de obra';
+        $('totaltxt').textContent = 'é o acumulado ' + (r.prazo === 1 ? 'no único mês' : 'nos ' + r.prazo + ' meses') + ' de obra';
 
     var tb = $('linhas'); tb.innerHTML = '';
     var barra = $('barra'); barra.innerHTML = '';
