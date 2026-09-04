@@ -439,8 +439,8 @@
   $('enviar').addEventListener('click', function(){
     var txt = mensagem();
     if(!txt) return;
-    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt); }
-    $('statusenv').textContent = 'Abrindo o direct. Sua mensagem já está copiada — é só colar e enviar.';
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).catch(function(){ fallback(txt, function(){}); }); } else { fallback(txt, function(){}); }    $('statusenv').textContent = 'Abrindo o direct. Sua mensagem já está copiada — é só colar e enviar.';
+          $('statusenv').textContent = 'Abrindo o direct. Sua mensagem já está copiada — é só colar e enviar.';
     window.open('https://ig.me/m/construa.360','_blank','noopener');
   });
 })();
